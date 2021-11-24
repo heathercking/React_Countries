@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
+import CountryDetails from '../components/CountryDetails';
 import CountryList from '../components/CountryList';
+import '../../src/App.css'
 
 const CountryContainer = ({country}) => {
 
@@ -22,7 +24,7 @@ const CountryContainer = ({country}) => {
     }
 
     return(
-        <div>
+        <div className="container">
             <table class="styled-table">
                 <thead>
                     <tr>
@@ -32,8 +34,10 @@ const CountryContainer = ({country}) => {
                 </thead>
                 <tbody>
                     <CountryList onCountryClick={onCountryClick} countries={countries} />
+                    {selectedCountry ? <CountryDetails country={selectedCountry}/> : null}
                 </tbody>
             </table>
+            
 
 
                 {/* <p>I am country container</p>
