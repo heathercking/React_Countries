@@ -1,15 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import CountryList from '../components/CountryList';
 
-const CountryContainer = () => {
+const CountryContainer = ({country}) => {
 
     const [ countries, setCountires ] = useState( [] )
-    const [ selectedcountry, setSelectedCountry ] = useState( null ) 
+    const [ selectedCountry, setSelectedCountry ] = useState( null ) 
 
     useEffect(() => {
         getCountries();
     },[])
     
+    const onCountryClick = function(country) {
+        setSelectedCountry(country);
+        console.log(country)
+    }
+
     const getCountries = function(){
         fetch('https://restcountries.com/v3.1/all')
         .then(response => response.json())
@@ -18,8 +23,21 @@ const CountryContainer = () => {
 
     return(
         <div>
-                <p>I am country container</p>
-                <CountryList countries={countries} />
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Population</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <CountryList onCountryClick={onCountryClick} countries={countries} />
+                </tbody>
+            </table>
+
+
+                {/* <p>I am country container</p>
+                <CountryList onCountryClick={onCountryClick} countries={countries} /> */}
         </div>
 
     )
