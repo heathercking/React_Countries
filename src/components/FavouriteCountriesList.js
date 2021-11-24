@@ -9,10 +9,8 @@ const FavouriteCountriesList = ({ favouriteCountries }) => {
     }) 
 
     return(
-        <div>
-            <ul>
-                {favouriteCountries}
-            </ul>
+        <div class="Test">
+            <p>Hello</p>
         </div>
     )   
 }

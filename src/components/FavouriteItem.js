@@ -5,9 +5,12 @@ const FavouriteCountriesList = ({ country }) => {
     return(
         <tr>
             <td> 
-                <img src={country.flags.png} width="50px"/>
+                <p>flag</p>
+                {/* <img src={country.flags.png} width="50px"/> */}
             </td>
-            <td>{country.name.common}</td> 
+            {/* <td>{country.name.common}</td>  */}
+            <td>country name</td> 
+
         </tr>
     )
 }

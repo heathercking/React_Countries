@@ -47,6 +47,7 @@ const CountryContainer = ({country}) => {
                     </tr>
                 </thead>
                 <tbody>
+                    
                     <CountryList onCountryClick={onCountryClick} countries={countries} />
                     {selectedCountry ? <CountryDetails onCountryFavouriteClick={onCountryFavouriteClick} country={selectedCountry}/> : null}
                     <FavouriteCountriesList favouriteCountries={favouriteCountries}/>
