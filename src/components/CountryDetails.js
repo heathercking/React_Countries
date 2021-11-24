@@ -1,9 +1,15 @@
 import React from 'react';
 import './CountryDetails.css';
 
-const CountryDetails = ({ country }) => {
+const CountryDetails = ({ country, onCountryFavouriteClick }) => {
+
+    const handleClick = function(){
+        onCountryFavouriteClick(country);
+    }
+
     return(
         <div class="Test">
+            <button onClick={handleClick}>Favourite</button>
             <table class="styled-table">
                 <thead>
                     <tr>
